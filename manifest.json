@@ -1,0 +1,18 @@
+{
+  "workshoptitle": "Explorando Vector Search e Generative AI na Oracle Cloud",
+  "help": "isabelle.anjos@oracle.com",
+	"tutorials": [
+    {
+      "title": "[OBRIGATÓRIO] Configuração do Ambiente de Laboratório - Oracle Free Tier",
+      "filename": "0-pt-config-lab/0-pt-config-lab.md"
+    },
+    {
+      "title": "Hands On - OCI Generative AI",
+      "filename": "1-pt-gen-ai/1-pt-gen-ai.md"
+    },
+    {
+      "title": "Hands On - Oracle 23AI Vector Search",
+      "filename": "2-pt-vector/2-pt-vector.md"
+    }
+  ]
+}
