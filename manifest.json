@@ -1,17 +1,25 @@
 {
-  "workshoptitle": "Explorando Vector Search e Generative AI na Oracle Cloud",
+  "workshoptitle": "Explore PDFs de Forma Simples com a Técnica de Busca Semântica",
   "help": "isabelle.anjos@oracle.com",
 	"tutorials": [
     {
-      "title": "[OBRIGATÓRIO] Configuração do Ambiente de Laboratório - Oracle Free Tier",
+      "title": "Configuração do Ambiente de Laboratório",
       "filename": "0-pt-config-lab/0-pt-config-lab.md"
     },
     {
-      "title": "Hands On - OCI Generative AI",
+      "title": "Oracle APEX: Crie Interfaces Poderosas para Upload de Arquivos",
       "filename": "1-pt-gen-ai/1-pt-gen-ai.md"
     },
     {
-      "title": "Hands On - Oracle 23AI Vector Search",
+      "title": "Oracle Database 23AI: ",
+      "filename": "2-pt-vector/2-pt-vector.md"
+    }
+    {
+      "title": "Oracle AI Agents: ",
+      "filename": "2-pt-vector/2-pt-vector.md"
+    }
+    {
+      "title": "Oracle Database 23AI: ",
       "filename": "2-pt-vector/2-pt-vector.md"
     }
   ]
