@@ -127,6 +127,7 @@ Execute conforme indicado abaixo:
 
 ![Execute Code](images\execute-code.png)
 
+Após a execução do código, você está pronto para prosseguir para o próximo laboratório.
 
 ## 👥 Agradecimentos
 
