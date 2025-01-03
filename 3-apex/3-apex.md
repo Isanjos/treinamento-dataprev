@@ -1,28 +1,29 @@
-# Oracle 23ai Vector Search
+# Oracle APEX
 
-## Introdução
+## 📌 Introdução
 
->**Com o Oracle 23ai, o Oracle AI Vector Search foi adicionado ao Oracle Database, aprimorando perfeitamente a estratégia de banco de dados convergente da Oracle, ao integrar nativamente a funcionalidade de vetores.** 
+>**O Oracle APEX (Application Express) é uma plataforma de desenvolvimento low-code que permite a criação rápida e fácil de aplicações seguras, escaláveis e altamente responsivas diretamente no Oracle Database, sem a necessidade de infraestrutura complexa.** 
 
-Ele pode ser combinado com a busca relacional em dados de negócios em um único sistema. O Oracle AI Vector Search foi projetado para cargas de trabalho de Inteligência Artificial (IA) e permite consultar dados com base em semântica, em vez de palavras-chave. 
-<br>
-Dessa forma, você não precisa adicionar um banco de dados de vetores especializado, **eliminando o problema de fragmentação de dados entre vários sistemas.** 
+![APEX](images/apex.png)
 
-Além disso, há uma integração profunda com outros recursos do Oracle Database, incluindo, mas não se limitando a, **segurança, disponibilidade, desempenho, particionamento, GoldenGate, RAC, Exadata, etc.** Os dados mantidos no Oracle Database podem ser acessados diretamente via SQL, sem a necessidade de convertê-los em uma forma intermediária. 
-<br><br>
-### ⭕ **O que é Vector Database?**
+### ➡️ **Como o Oracle APEX revoluciona o desenvolvimento de aplicações no Oracle Database?**
 
-> Um banco de dados vetorial é qualquer banco de dados que pode armazenar e gerenciar embeddings vetoriais de forma nativa e lidar com os dados não estruturados que eles descrevem, como documentos, imagens, vídeos ou áudios.
+> Com o Oracle APEX, desenvolvedores podem criar aplicações empresariais modernas por meio de uma interface intuitiva que combina design visual, componentes integrados e funcionalidades avançadas, como gráficos interativos, relatórios dinâmicos e dashboards. O APEX aproveita as capacidades nativas do Oracle Database, como segurança, alta disponibilidade e desempenho, permitindo a criação de workspaces, o upload de aplicações e a integração com serviços externos via credenciais e APIs. Com poucos cliques, é possível importar arquivos SQL, configurar parâmetros de segurança e realizar customizações rápidas e eficientes.
+
 
 <br>
-### ⭕ **Como o Oracle AI Vector Search revoluciona a busca de dados semânticos no Oracle Database?**
 
-De modo geral, você pode criar tabelas com o novo tipo de dado vetorial VECTOR, inserir vetores usando INSERT, carregar vetores utilizando o SQL Loader ou carregar e descarregar utilizando o Data Pump, ou ainda criar índices vetoriais em suas embeddings de vetores. Novas funções SQL foram adicionadas, como funções de distância vetorial, além de várias outras funções e operadores SQL que você pode utilizar com vetores no Oracle AI Vector Search para criar, converter e descrever vetores, ou para realizar chunking e embedding de dados.
-<br>
 
-### **Objetivos**
+### 📌 **Objetivos**
 
-O objetivo deste workshop é demonstrar de forma prática como utilizar a funcionalidade de busca vetorial do Oracle 23c AI Vector Search. Durante o workshop, você aprenderá a criar e configurar um banco de dados autônomo (Autonomous Database) no Oracle Cloud Infrastructure (OCI).
+  Guiar os participantes na criação e configuração de um ambiente APEX no Oracle Cloud Infrastructure (OCI) para implementar uma aplicação baseada em IA generativa.  
+
+O que você aprenderá:
+
+  - Criar um workspace no APEX.  
+  - Importar e instalar uma aplicação.  
+  - Ajustar credenciais para integração com serviços do OCI.  
+  - Realizar de testes práticos para validar a aplicação.  
 
 <br>
 ### **Recursos e Suporte**:
@@ -34,7 +35,7 @@ O objetivo deste workshop é demonstrar de forma prática como utilizar a funcio
 ### _**Aproveite sua experiência na Oracle Cloud!**_
 
 
-## Task 1: Validação de Região
+## Task 1:	Criação de Workspace e Import de aplicação em ambiente APEX
 
 Faça o login no Oracle Cloud Infrastructure (OCI) e valide se a região de Chicago se encontra disponível para uso.
 

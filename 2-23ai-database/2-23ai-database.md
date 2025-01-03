@@ -1,28 +1,34 @@
 # Oracle 23ai Vector Search
 
-## Introdução
+## 📌 Introdução
 
->**Com o Oracle 23ai, o Oracle AI Vector Search foi adicionado ao Oracle Database, aprimorando perfeitamente a estratégia de banco de dados convergente da Oracle, ao integrar nativamente a funcionalidade de vetores.** 
+>**Com o Oracle 23c AI, o AI Vector Search integra vetores ao Oracle Database, eliminando bancos especializados e evitando a fragmentação de dados. Essa tecnologia permite buscas por similaridade combinadas com SQL simples, potencializando modelos de linguagem (LLMs) com contexto adicional. Inclui novo tipo de dado vetorial, índices específicos e extensões SQL para análises avançadas diretamente no banco de dados.** 
 
-Ele pode ser combinado com a busca relacional em dados de negócios em um único sistema. O Oracle AI Vector Search foi projetado para cargas de trabalho de Inteligência Artificial (IA) e permite consultar dados com base em semântica, em vez de palavras-chave. 
-<br>
-Dessa forma, você não precisa adicionar um banco de dados de vetores especializado, **eliminando o problema de fragmentação de dados entre vários sistemas.** 
+![Semantic](images/semantic.png)
 
-Além disso, há uma integração profunda com outros recursos do Oracle Database, incluindo, mas não se limitando a, **segurança, disponibilidade, desempenho, particionamento, GoldenGate, RAC, Exadata, etc.** Os dados mantidos no Oracle Database podem ser acessados diretamente via SQL, sem a necessidade de convertê-los em uma forma intermediária. 
-<br><br>
-### ⭕ **O que é Vector Database?**
+Referência: [Announcing Oracle Database 23ai : General Availability
+](https://blogs.oracle.com/database/post/oracle-23ai-now-generally-available)
+
+### ➡️ **O que é Vector Database?**
 
 > Um banco de dados vetorial é qualquer banco de dados que pode armazenar e gerenciar embeddings vetoriais de forma nativa e lidar com os dados não estruturados que eles descrevem, como documentos, imagens, vídeos ou áudios.
 
+
+### ➡️ **Como o Oracle AI Vector Search revoluciona a busca de dados semânticos no Oracle Database?**
+
+> O Oracle AI Vector Search permite criar tabelas com o novo tipo de dado VECTOR, armazenando vetores diretamente no banco de dados. É possível inserir vetores com INSERT, carregar dados usando SQL Loader ou Data Pump, e criar índices para otimizar buscas em embeddings. Novas funções SQL, como as de cálculo de distância vetorial, facilitam a análise de vetores, enquanto operadores adicionais permitem criar, converter e descrever vetores, além de realizar chunking e embeddings de dados de forma eficiente.
+
 <br>
-### ⭕ **Como o Oracle AI Vector Search revoluciona a busca de dados semânticos no Oracle Database?**
 
-De modo geral, você pode criar tabelas com o novo tipo de dado vetorial VECTOR, inserir vetores usando INSERT, carregar vetores utilizando o SQL Loader ou carregar e descarregar utilizando o Data Pump, ou ainda criar índices vetoriais em suas embeddings de vetores. Novas funções SQL foram adicionadas, como funções de distância vetorial, além de várias outras funções e operadores SQL que você pode utilizar com vetores no Oracle AI Vector Search para criar, converter e descrever vetores, ou para realizar chunking e embedding de dados.
-<br>
+### 📌 **Objetivos**
 
-### **Objetivos**
+Demonstrar de forma prática como utilizar a funcionalidade de busca vetorial do Oracle 23c AI Vector Search.
 
-O objetivo deste workshop é demonstrar de forma prática como utilizar a funcionalidade de busca vetorial do Oracle 23c AI Vector Search. Durante o workshop, você aprenderá a criar e configurar um banco de dados autônomo (Autonomous Database) no Oracle Cloud Infrastructure (OCI).
+O que você aprenderá:
+
+- Criar e configurar um banco de dados autônomo (Autonomous Database) no Oracle Cloud Infrastructure (OCI).
+- Utilizar a funcionalidade de busca vetorial para otimizar consultas e análises.
+- Explorar as vantagens do Oracle 23c AI na integração de dados relacionais e semânticos.
 
 <br>
 ### **Recursos e Suporte**:
@@ -34,7 +40,7 @@ O objetivo deste workshop é demonstrar de forma prática como utilizar a funcio
 ### _**Aproveite sua experiência na Oracle Cloud!**_
 
 
-## Task 1: Validação de Região
+## 1️⃣ Validação de Região
 
 Faça o login no Oracle Cloud Infrastructure (OCI) e valide se a região de Chicago se encontra disponível para uso.
 
@@ -47,7 +53,7 @@ Busque por **US Midwest (Chicago)** e clique no botão subscribe. O processo de 
 
 ![Subscribe Region](images/subscribe-region.png)
 
-## Task 2: Criação de Autonomous Database
+## 2️⃣ Criação de Autonomous Database
 
 Clique no menu de hambúrger do canto superior esquerdo da tela, na sequência navegue até a página de gestão de autonomous databases.
 
@@ -71,7 +77,7 @@ Aguarde até a conclusão da criação:
 ![Yellow ADW](images/yellow-adw.png)
 ![Green ADW](images/green-adw.png)
 
-## Task 3: Configurando o Autonomous Database
+## 3️⃣ Configurando o Autonomous Database
 
 Clique no ícone chamado database actions e SQL:
 ![Database Actions](images/database-actions.png)
@@ -120,13 +126,13 @@ Execute conforme indicado abaixo:
 ![Execute Code](images\execute-code.png)
 
 
-## Agradecimentos
+## 👥 Agradecimentos
 
 - **Autores** - Caio Oliveira
 - **Autor Contribuinte** - Isabelle Anjos
 - **Última Atualização Por/Data** - Janeiro 2025
 
-## Declaração de Porto Seguro (Safe Harbor)
+## 🛡️ Declaração de Porto Seguro (Safe Harbor)
 
 O texto a seguir tem como objetivo traçar a orientação dos nossos produtos em geral. É destinado somente a fins informativos e não pode ser incorporado a um contrato. Ele não representa um compromisso de entrega de qualquer tipo de material, código ou funcionalidade e não deve ser considerado em decisões de compra. O desenvolvimento, a liberação, a data de disponibilidade e a precificação de quaisquer funcionalidades ou recursos descritos para produtos da Oracle estão sujeitos a mudanças e são de critério exclusivo da Oracle Corporation.
 
