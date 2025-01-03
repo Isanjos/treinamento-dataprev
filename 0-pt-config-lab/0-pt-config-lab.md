@@ -1,15 +1,15 @@
 # Configuração do Oracle Free Tier 
 
-## Introdução
+## 📌 Introdução
 
 > Este documento de configuração foi elaborado para guiar você na **criação de uma conta Oracle Cloud Free Tier**, que é necessária para realizar qualquer laboratório técnico na Oracle Cloud Infrastructure (OCI).
 
-### ⭕ **O que é a Oracle Cloud?**
+### ➡️ **O que é a Oracle Cloud?**
 
 A [**Oracle Cloud**](https://www.oracle.com/br/cloud/) é uma plataforma de infraestrutura e serviços em nuvem que oferece uma ampla gama de capacidades para soluções de negócios, aplicações e desenvolvimento. Com a OCI, você pode aproveitar recursos de computação, armazenamento, bancos de dados, inteligência artificial, entre outros, tudo em um ambiente seguro e de alto desempenho.
 
 <br>
-### ⭕ **Como funciona a Oracle Cloud Free Tier?**
+### ➡️ **Como funciona a Oracle Cloud Free Tier?**
 
 O Oracle Cloud Free Tier é uma conta gratuita que oferece acesso a vários serviços da Oracle Cloud sem custo, com [**$300 USD**](https://www.oracle.com/cloud/free/) em créditos gratuitos válidos por **30 dias** e acesso a serviços gratuitos. Isso inclui, mas não se limita a, computação, armazenamento, bancos de dados e serviços de inteligência artificial.
 
@@ -25,7 +25,7 @@ O principal objetivo do Oracle Free Tier é **permitir que você experimente e d
 ### _**Aproveite sua experiência na Oracle Cloud!**_
 
 
-## Task 1: Criação da Conta Oracle Free Tier
+## 1️⃣ Criação da Conta Oracle Free Tier
 
 ### <span style="background-color:#FFFFE0;">**Passo 1.**</span>
 
@@ -45,7 +45,7 @@ Preencha com as informações do **País, Nome e Sobrenome, e Email**. Em seguid
 > ![Dif Email](images/dif-email.png " ")
 
 
-## Task 2: Ativação da Conta
+## 2️⃣ Ativação da Conta
 
 ### <span style="background-color:#FFFFE0;">**Passo 3.**</span>
 
@@ -107,7 +107,7 @@ Preencha as informações de endereço. Após preencher todos os campos, clique 
 
 ![Payment Information](images/payment.png " ")
 
-## Task 3: Configuração da Autenticação de Dois Fatores
+## 3️⃣ Configuração da Autenticação de Dois Fatores
 
 ### <span style="background-color:#FFFFE0;">**Passo 8.**</span>
 
@@ -148,7 +148,7 @@ Conclua o processo de configuração:
 
 ![Auth Application Done](images/auth-done.png " ")
 
-## Task 4: Acesso à conta
+## 4️⃣ Acesso à conta
 
 ### <span style="background-color:#FFFFE0;">**Passo 10.**</span>
 
@@ -167,19 +167,19 @@ Após o login, você será redirecionado para o painel da Oracle Cloud.
 ![OCI Panel](images/oci-panel.png " ")
 
 
-## Sumário
+## 5️⃣ Sumário
 
 Com sua conta Oracle Cloud Free Tier configurada, agora você pode prosseguir com qualquer laboratório técnico na OCI. **Explore ao máximo seus créditos gratuitos para descobrir tudo o que a Oracle Cloud tem a oferecer!**
 
-## Agradecimentos
+## 👥 Agradecimentos
 
 - **Autores** - Caio Oliveira
 - **Autor Contribuinte** - Isabelle Anjos
 - **Última Atualização Por/Data** - Outubro 2024
 
-## Declaração de Porto Seguro (Safe Harbor)
+## 🛡️ Declaração de Porto Seguro (Safe Harbor)
 
-O texto a seguir tem como objetivo traçar a orientação dos nossos produtos em geral. É destinado somente a fins informativos e não pode ser incorporado a um contrato. Ele não representa um compromisso de entrega de qualquer tipo de material, código ou funcionalidade e não deve ser considerado em decisões de compra. O desenvolvimento, a liberação, a data de disponibilidade e a precificação de quaisquer funcionalidades ou recursos descritos para produtos da Oracle estão sujeitos a mudanças e são de critério exclusivo da Oracle Corporation.
+O tutorial apresentado tem como objetivo traçar a orientação dos nossos produtos em geral. É destinado somente a fins informativos e não pode ser incorporado a um contrato. Ele não representa um compromisso de entrega de qualquer tipo de material, código ou funcionalidade e não deve ser considerado em decisões de compra. O desenvolvimento, a liberação, a data de disponibilidade e a precificação de quaisquer funcionalidades ou recursos descritos para produtos da Oracle estão sujeitos a mudanças e são de critério exclusivo da Oracle Corporation.
 
 Esta é a tradução de uma apresentação em inglês preparada para a sede da Oracle nos Estados Unidos. A tradução é realizada como cortesia e não está isenta de erros. Os recursos e funcionalidades podem não estar disponíveis em todos os países e idiomas. Caso tenha dúvidas, entre em contato com o representante de vendas da Oracle. 
 
