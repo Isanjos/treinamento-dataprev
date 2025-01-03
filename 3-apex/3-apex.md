@@ -27,6 +27,7 @@ O que você aprenderá:
 ### **Recursos e Suporte**:
 
 - **Download da Aplicação**: [f102.sql](https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/idi1o0a010nx/b/demo_externaltable/o/f102.sql)
+- **Download do PDF**: [Normas Internas Dataprev](https://www.dataprev.gov.br/governanca/normativos/normasinternas). Para o nosso exemplo, utilizaremos o arquivo **Viagem a Serviço Nacional**.
 - **Documentação da Oracle Cloud**: [Getting started with vectors in 23ai](https://blogs.oracle.com/coretec/post/getting-started-with-vectors-in-23ai)
 - **Tutoriais**: [Oracle Database 23ai - Oracle AI Vector Search & Retrieval Augmented Generation (RAG) with Oracle APEX](https://www.linkedin.com/pulse/oracle-database-23ai-ai-vector-search-retrieval-augmented-rao-bqkcf/)
 
@@ -54,7 +55,7 @@ Em seguida, clique na opção **Create Workspace**. Na tela seguinte, escolha a 
 
    ![Existing Schema](images/existing-schema.png)
 
-Na sequência, preencha o formulário como o exemplo abaixo (recomendamos a senha WORKSHOPsec2019##). E clique em **Create Workspace** para finalizar.
+Na sequência, preencha o formulário como o exemplo abaixo (recomendamos a senha **WORKSHOPsec2019##**). E clique em **Create Workspace** para finalizar.
 
    ![Create Workspace](images/create-workspace.png)
 
@@ -94,11 +95,90 @@ Por fim, clique na aba **App Builder** para retornar à interface principal de d
 
    ![App Builder](images/app-builder.png)
 
+## 2️⃣ Configuração de Credenciais para RAG (Retrieval-Augmented Generation)
+
+Na aba **App Builder**, clique em **Workspace Utilities** para acessar as ferramentas utilitárias do workspace.
+
+   ![Workspace Utilities](images/workspace-utilities.png)
+
+Em seguida, selecione **Web Credentials** e clique na credencial existente chamada **apex\_ai\_cred**.
+
+   ![Web Credentials](images/web-credentials.png)
+   ![Apex AI Cred](images/apex-ai-cred.png)
+
+Para preencher corretamente essa credencial, é necessário obter algumas informações sobre o usuário no ambiente OCI. Na guia do navegador onde o OCI está aberto, clique no avatar no canto superior direito e selecione **User Settings**.
+
+   ![User Settings](images/user-settings.png)
+
+Na tela **User Settings**, localize a guia **API Keys** no canto inferior esquerdo. Clique nela e siga as instruções do assistente (wizard) para criar um par de chaves de API. 
+
+> **ATENÇÃO: Certifique-se de salvar as seguintes informações em um local seguro, pois será necessária para configurar a credencial na próxima etapa:** <br></br>
+> - **OCI User ID**
+> - **OCI Private Key**
+> - **OCI Public Key Fingerprint**
+
+   ![API Keys](images/api-keys.png)
+
+O preenchimento do formulário no APEX exigirá informações específicas que podem ser obtidas na tela do OCI. Para facilitar, **utilize as seguintes correspondências de cores** entre os dois sistemas. Preencha as seguintes informações:
+- OCI User ID
+- OCI Private Key 
+- OCI Public Key Fingerprint
+
+   ![OCID API OCI](images/ocid-api-oci.png)
+   ![OCID API APEX](images/ocid-api-apex.png)
+
+O OCI Tenancy ID pode ser coletado no OCI na página **Tenancy Details**, que pode ser acessada clicando no nome do seu Tenancy na página inicial do Console ou na seção Tenancy Information dentro de User Settings.
+
+   ![Tenancy Details](images/tenancy-details.png)
+   ![Tenancy OCID](images/tenancy-ocid.png)
+
+Retorne à página do APEX e insira o **OCI Tenancy ID** no campo correspondente, utilizando o valor coletado na página Tenancy Details do OCI.
+
+Por fim, clique em **Apply Changes** para salvar as configurações e concluir o ajuste da credencial.
+
+## 3️⃣ Teste da Aplicação
+
+Com a configuração da credencial concluída, podemos testar a aplicação. Para isso, clique em **App Builder** e, em seguida, no ícone **Run** para executar a aplicação e verificar seu funcionamento.
+
+   ![Run Application](images/run-application.png)
+
+Clique em **Arquivos e Normas**.
+
+   ![Assistente AI](images/assistente-ai.png)
+
+Seguiremos com o upload de um arquivo PDF para dentro da aplicação. Qualquer PDF pode ser utilizado, mas, para fins didáticos deste workshop, recomendamos as normas disponíveis no link: [Normas Internas Dataprev](https://www.dataprev.gov.br/governanca/normativos/normasinternas). Para o nosso exemplo, utilizaremos o arquivo **Viagem a Serviço Nacional**.
+
+   ![Dataprev Site](images/dataprev-site.png)
+
+Clique em **Upload** e preencha o formulário seguindo o exemplo fornecido. O **JSON** utilizado para o preenchimento está disponível logo abaixo da imagem de referência.
+
+   ![Uploader](images/uploader.png)
 
 
+    <copy>  
+
+        --JSON Utilizado no preenchimento
+    {
+        "by" : "words",
+        "max" : "50",
+        "overlap" : "0",
+        "split": "sentence",
+        "language" : "ptb",
+        "normalize": "none"
+    }
+
+    </copy>
+
+Se o upload for concluído com sucesso, sua tela deverá se assemelhar ao exemplo exibido, mostrando a confirmação do arquivo enviado e os detalhes preenchidos no formulário.
+
+   ![Row Created](images/row-created.png)
+
+Clique em Assistente AI e faça uma pergunta relacionada ao documento carregado. Por exemplo, você pode perguntar: **"COMO FAZER ALTERAÇÃO DE VIAGEM"**.
+
+   ![Question](images/question.png)
 
 
-
+**Se não houver erro, você terá concluído com sucesso o workshop.** Sinta-se à vontade para fazer o upload de outros arquivos ou explorar realizando novas perguntas ao Assistente AI.
 
 
 ## 👥 Agradecimentos
