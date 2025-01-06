@@ -132,7 +132,7 @@ Após a execução do código, você está pronto para prosseguir para o próxim
 ## 👥 Agradecimentos
 
 - **Autores** - Caio Oliveira
-- **Autor Contribuinte** - Isabelle Anjos
+- **Autores Contribuintes** - Isabelle Anjos, Gabriela Miyazima, Aristotelles Serra
 - **Última Atualização Por/Data** - Janeiro 2025
 
 ## 🛡️ Declaração de Porto Seguro (Safe Harbor)
