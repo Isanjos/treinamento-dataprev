@@ -285,13 +285,13 @@ Selecione os campos desejados **Embarção e Quantidade**. _Clique com o botão 
 
 
 
-## Agradecimentos
+## 👥 Agradecimentos
 
 - **Autores** - Gabriela Miyazima
 - **Autor Contribuinte** - Caio Oliveira, Isabelle Anjos
 - **Última Atualização Por/Data** - Janeiro 2025
 
-## Declaração de Porto Seguro (Safe Harbor)
+## 🛡️ Declaração de Porto Seguro (Safe Harbor)
 
 O texto a seguir tem como objetivo traçar a orientação dos nossos produtos em geral. É destinado somente a fins informativos e não pode ser incorporado a um contrato. Ele não representa um compromisso de entrega de qualquer tipo de material, código ou funcionalidade e não deve ser considerado em decisões de compra. O desenvolvimento, a liberação, a data de disponibilidade e a precificação de quaisquer funcionalidades ou recursos descritos para produtos da Oracle estão sujeitos a mudanças e são de critério exclusivo da Oracle Corporation.
 
