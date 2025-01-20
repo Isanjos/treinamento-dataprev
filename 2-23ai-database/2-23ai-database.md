@@ -129,6 +129,28 @@ Execute conforme indicado abaixo:
 
 Após a execução do código, você está pronto para prosseguir para o próximo laboratório.
 
+
+## 4️⃣ Criação do Oracle Analytics Cloud
+
+Clique no menu de hambúrger do canto superior esquerdo da tela, na sequência navegue até a página de gestão do Oracle Analytics Cloud.
+
+![Analytics Cloud Acess](images/AcessoAnalytics.png)
+
+Na página de gestão do Oracle Analytics Cloud, clique em **Create Instance**.
+  
+![Create Analytics Cloud](images/CreateOAC.png)
+
+Dê um nome a instância do Analytics Cloud e mantenha as outras configurações como na imagem a seguir. Ao finalizar clique em **Create**:
+
+![Configurando Analytics Cloud](images/CreateOAC1.png)
+![Configurando Analytics Cloud](images/CreateOAC2.png)
+
+Aguarde até a conclusão da criação: 
+- Ícone amarelo = criando; 
+- Ícone verde = pronto para uso;
+![Green OAC](images/CreateOAC3.png)
+
+
 ## 👥 Agradecimentos
 
 - **Autores** - Caio Oliveira
