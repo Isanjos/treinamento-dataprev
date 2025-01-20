@@ -171,6 +171,7 @@ Parabéns, você terminou os Laboratórios de **OAC - Oracle Analytics Cloud com
 1. Adiocione mais uma tela. No canto inferior em um símbolo de '+', ao lado da aba 'Tela 1' ou 'Geral'. Clique nele para adicionar uma segunda Tela.
    ![Tela 4](images/Tela2.png) 
 
+<br>
 
 ### **Estatística - Previsão (Forecast)**
 2. Segure **_CTRL+Clique_** nos campos **ANO e QUANTIDADE** na primeira coluna no primeiro ícone (Dados), e arraste os dois para a tela em branco. Verifique que é um gráfico de **Linha**.
@@ -188,7 +189,6 @@ Parabéns, você terminou os Laboratórios de **OAC - Oracle Analytics Cloud com
 5. Outra forma de analisar a mudança períodica da quantidade de embarcações, é pelo gráfico de . Por isso, segure _CTRL+Clique_ nos campos **ANO e QUANTIDADE** na primeira coluna no primeiro ícone (Dados), e arraste os dois para a tela ao lado do gráfico de linha. 
    ![Cascata](images/Cascata.png) 
    ![Cascata](images/Cascata2.png) 
-
 
 <br>
 
@@ -236,8 +236,6 @@ Parabéns, você terminou os Laboratórios de **OAC - Oracle Analytics Cloud com
 16. Clique com o _botão direito_, selecione **Adionar Estatísticas**. E escolhe a opção **Linha de Referência**. Deixe na Função Média. 
    ![Frota de Embarcação Ano a Ano](images/Calc13.png)
    ![Frota de Embarcação Ano a Ano](images/Calc16.png)
-
-
 
 <br>
 
