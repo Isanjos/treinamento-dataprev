@@ -1,251 +1,196 @@
-# Oracle 23ai Vector Search
+# Oracle Analytics Cloud
 
 ## Introdução
 
->**Com o Oracle 23ai, o Oracle AI Vector Search foi adicionado ao Oracle Database, aprimorando perfeitamente a estratégia de banco de dados convergente da Oracle, ao integrar nativamente a funcionalidade de vetores.** 
+>**Com o Oracle Analytics Cloud, se aprimora as análises dos seus dados com funcionalidade estatísticas e de IA com sugestões para criação de visualizações que podem enriquecer seu Painel Analítico.** 
 
-Ele pode ser combinado com a busca relacional em dados de negócios em um único sistema. O Oracle AI Vector Search foi projetado para cargas de trabalho de Inteligência Artificial (IA) e permite consultar dados com base em semântica, em vez de palavras-chave. 
-<br>
-Dessa forma, você não precisa adicionar um banco de dados de vetores especializado, **eliminando o problema de fragmentação de dados entre vários sistemas.** 
+Complementando a plataforma de Self-service Analytics, o OAC conta com um motor de Business Intelligence proveniente do OBIEE (solução extremamente estabelecida no mercado), que permite construção de Modelos Dimensionais, Hierarquias, e outras estruturas para otimizar o consumo dos dados, como Relatórios e Dashboards.
 
-Além disso, há uma integração profunda com outros recursos do Oracle Database, incluindo, mas não se limitando a, **segurança, disponibilidade, desempenho, particionamento, GoldenGate, RAC, Exadata, etc.** Os dados mantidos no Oracle Database podem ser acessados diretamente via SQL, sem a necessidade de convertê-los em uma forma intermediária. 
-<br><br>
-### ⭕ **O que é Vector Database?**
-
-> Um banco de dados vetorial é qualquer banco de dados que pode armazenar e gerenciar embeddings vetoriais de forma nativa e lidar com os dados não estruturados que eles descrevem, como documentos, imagens, vídeos ou áudios.
+Toda a filosofia da solução gira ao redor dos conceitos de Augmented Analytics, tema muito recorrente em análises de companhias especializadas, como o Gartner. Ele se resume em enriquecer as análises com conceitos de Inteligência Artificial e Machine Learning, dando acesso a abordagens estatísticas avançadas para qualquer perfil de usuário, e não apenas aos que possuem vasto conhecimento sobre o tema. Nossa solução é classificada como **‘Líder’ no Quadrante Mágico do Gartner**, principal referência para avaliação e comparação de tecnologias hoje em dia.
 
 <br>
-### ⭕ **Como o Oracle AI Vector Search revoluciona a busca de dados semânticos no Oracle Database?**
-
-De modo geral, você pode criar tabelas com o novo tipo de dado vetorial VECTOR, inserir vetores usando INSERT, carregar vetores utilizando o SQL Loader ou carregar e descarregar utilizando o Data Pump, ou ainda criar índices vetoriais em suas embeddings de vetores. Novas funções SQL foram adicionadas, como funções de distância vetorial, além de várias outras funções e operadores SQL que você pode utilizar com vetores no Oracle AI Vector Search para criar, converter e descrever vetores, ou para realizar chunking e embedding de dados.
-<br>
-
 ### **Objetivos**
 
-O objetivo deste workshop é demonstrar de forma prática como utilizar a funcionalidade de busca vetorial do Oracle 23c AI Vector Search. Durante o workshop, você aprenderá a criar e configurar um banco de dados autônomo (Autonomous Database) no Oracle Cloud Infrastructure (OCI), carregar e gerenciar embeddings de vetores, integrar modelos ONNX para gerar embeddings semânticos a partir de documentos, e realizar buscas vetoriais para recuperar informações relevantes com base em similaridade semântica, aplicando essas técnicas em um cenário que envolve a consulta de bulas de remédios.
+O objetivo deste workshop é demonstrar de forma prática como utilizar a ferramenta do Oracle Analytics Cloud e algumas funcionalidade de AI&ML embarcadas no OAC. Durante o workshop, você aprenderá a criar visualizações, adicinar estatísticas nas análises em um cenário que dados abertos da Marinha Brasileira (https://dados.gov.br/dados/conjuntos-dados/embarcacoes).
 
 <br>
 ### **Recursos e Suporte**:
 
-- **Documentação da Oracle Cloud**: [Getting started with vectors in 23ai](https://blogs.oracle.com/coretec/post/getting-started-with-vectors-in-23ai)
-- **Tutoriais**: [Oracle Database 23ai - Oracle AI Vector Search & Retrieval Augmented Generation (RAG) with Oracle APEX](https://www.linkedin.com/pulse/oracle-database-23ai-ai-vector-search-retrieval-augmented-rao-bqkcf/)
+- **Documentação da Oracle Cloud**: [Getting started with Oracle Analytics Cloud](https://docs.oracle.com/en/cloud/paas/analytics-cloud/index.html)
+- **Tutoriais**: [Oracle Analytics Cloud - Explore Funcionalidades com Tutoriais](https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorials.html)
 
 
 ### _**Aproveite sua experiência na Oracle Cloud!**_
 
 
-## Task 1: Validação de Região
+## 1️⃣ Acessar OAC 
 
-Faça o login no Oracle Cloud Infrastructure (OCI) e valide se a região de São Paulo se encontra disponível para uso.
-
-   ![Validate Region](images/validate-region.png " ")
-
-> **Caso a região de São Paulo não esteja disponível, clique em manage region (caso já esteja disponível pule para a sessão 2 - Criação de Autonomous Database)** 
-![Manage Region](images/manage-region.png)
-
-Busque por **Brazil East (Sao Paulo)** e clique no botão subscribe. O processo de subscrição pode levar alguns minutos, aguarde para dar sequência ao workshop. Clique no ícone escrito **Oracle Cloud** no canto esquerdo e faça logoff e login para validar se a região já foi subscrita.
-
-![Subscribe Region](images/subscribe-region.png)
+1. Clique no menu de hambúrger do canto superior esquerdo da tela, na sequência navegue até a página de gestão do Oracle Analytics Cloud.
+   ![Analytics Cloud Acess](images/AcessoOAC.png)
 
 
-## Task 2: Criação de Autonomous Database
-
-Clique no menu de hambúrger do canto superior esquerdo da tela, na sequência navegue até a página de gestão de autonomous databases.
-
-![Autonomous Acess](images/autonomous-acess.png)
-
-Na página de gestão de Autonomous Databases, clique em create autonomous database. Selecione **ATP ou ADW**
-  
-![Create Autonomous](images/create-autonomous.png)
-
-Escolha a versão 23ai para o banco de dados:
-
-![Create 23AI](images/create-23ai.png)
-
-Coloque uma senha que consiga lembrar, escolha **secure access from everywhere** e clique em **Create Autonomous Database**:
-
-![Secure Acess](images/secure-acess.png)
-
-Aguarde até a conclusão da criação: 
-- Ícone amarelo = criando; 
-- Ícone verde = pronto para uso;
-![Yellow ADW](images/yellow-adw.png)
-![Green ADW](images/green-adw.png)
-
-## Task 3: Configurando o Autonomous Database
-
-Clique no ícone chamado database actions e SQL:
-![Database Actions](images/database-actions.png)
-
-Caso seja requisitado, o usuário é **admin** e a senha é a **fornecida na criação do autonomous database da etapa anteiror.**
-Feche todos os tutoriais que aparecerão na página.
-Copie, cole e execute os comandos abaixo:
+2. Selecione a instância do OAC criada anteriormente. Agora abra o ambiente clique no botão **Analytics Homepage**.
+   ![Analytics Cloud Homepage](images/AcessoOAC1.png)
+   ![Analytics Cloud Homepage](images/AcessoOAC2.png)
 
 
-    <copy>  
-        --Criação de credencial
-    BEGIN
-        DBMS_CLOUD.CREATE_CREDENTIAL(
-            credential_name => 'OBJ_STORE_CRED',
-            username => 'oracleidentitycloudservice/CAIO.OLIVEIRA@ORACLE.COM',
-            password => 'teste'
-        );
-    END;
-    /
+<br>
+3. Após o acesso da Homepage do OAC, faça o download do arquivo .dva com o material do laboratório: [Painel das Embarcações Brasileiras](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idi1o0a010nx/b/Fast_Track/o/Lab%20Analytics%20-%20Embarca%C3%A7%C3%B5es%20Brasil.dva)
 
-    --Download de Modelo onnx do object storage para diretorio autonomous
-    begin
-    dbms_cloud.get_object(
-        credential_name => 'OBJ_STORE_CRED'
-        , object_uri => 'https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/nS9blF5U2ETiZT7YKZ_zrXtPOEH2Xf22TbdlpK99xZIEPmZedx4_eFBX4khYykmw/n/idi1o0a010nx/b/TDC/o/intfloatmodelsmall.onnx'
-        , directory_name => 'DATA_PUMP_DIR'
-        , file_name => 'intfloatmodelsmall.onnx'
-    );
-    end;
-    /
+4. Em seguida, clique nos 3 pontos, ao lado do ícone do perfil. Selecione **Import Workbook**, escolha o arquivo .dva que acabou de baixar no passo anterior.
+   ![Import do Arquivo](images/Import1.png)
+   ![Import do Arquivo](images/Import2.png)
+   ![Import do Arquivo](images/Import3.png)
 
-    --Import de modelo onnx para autonomous
-    EXECUTE dbms_vector.load_onnx_model('DATA_PUMP_DIR', 'intfloatmodelsmall.onnx', 'admin.doc_model', JSON('{"function" : "embedding", "embeddingOutput" : "embedding" , "input": {"input": ["DATA"]}}'));
-    commit;
+5. Após a importação você terá acesso ao dataset (Conjunto de Dados) **Brasil-Embarcações** e ao workbook que vamos fazer, se quiser dar uma olhada como ele vai ficar no final só entrar nele **Lab Analytics - Embarcações Brasil**. 
+   ![Homepage depois do import](images/Import4.png)
 
-    --Download de Arquivo para upload (Bula Remédio 01)
-    begin
-    dbms_cloud.get_object(
-        credential_name => 'OBJ_STORE_CRED'
-        , object_uri => 'https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/z4N9MiLKEgxU1xeIlOoJp0yT9u9A5cz_MD6Ng-IqtgMwFZUS8tmA-6Vlz7FA-aeQ/n/idi1o0a010nx/b/TDC/o/OK-Engov.pdf'
-        , directory_name => 'DATA_PUMP_DIR'
-        , file_name => 'OK-Engov.pdf'
-    );
-    end;
-    /
 
-    --Download de Arquivo para upload (Bula Remédio 02)
-    begin
-    dbms_cloud.get_object(
-        credential_name => 'OBJ_STORE_CRED'
-        , object_uri => 'https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/ScTV-lu7p7m_nqAqTIFf91zBVf1Z9I7ZO8VsrHh9arZqev_E_HZ0JobfF_9TJVUw/n/idi1o0a010nx/b/TDC/o/OK-TYLENOL.pdf'
-        , directory_name => 'DATA_PUMP_DIR'
-        , file_name => 'OK-TYLENOL.pdf'
-    );
-    end;
-    /
-    </copy>
+6. (OPCIONAL) Se quiser mudar o idioma da ferramenta, clique no Ícone do Perfil, selecione Perfil. Depois só escolher o Idioma e a Configuração Regional do OAC. 
+   ![Perfil - Idioma](images/Perfil.png)
+   ![Perfil - Idioma](images/Perfil2.png)
 
-Execute conforme indicado abaixo:
 
-![Execute Code](images\execute-code.png)
+## 2️⃣ Criação do Dashboard - Visualizações
 
-## Task 4: Criação de Objetos e Validação de Ambiente
+1. Na Homepage do OAC, selecione o conjunto de dados **Brasil-Embarcações**. Irá abrir o workbook (Pasta de Trabalho), uma tele em branco para montar o Painel com análises e visualizações. 
+![Conjunto de Dados para montar Painel](images/Workbook1.png)
+![Painel com Conjunto de Dados selecionado](images/Workbook2.png)
 
-Copie, cole e execute os comandos abaixo:
+2. Na tela em branco do painel, selecione os dados da primeira coluna da esquerda, segurando o _CTRL+Clique_  **Quantidade, Latitude, Longitude**. Agora, arraste os itens selecionados para a Tela, e como sugestão o OAC já sugere que a visualização seja um Mapa.
+![Visualização Mapa](images/Workbook3.png)
+![Visualização Mapa](images/Workbook4.png)
 
-    <copy>  
-    --Criação de tabela para upload de arquivos
-    CREATE TABLE documentation_tab (id number, data blob);
+4. Pode alterar a propriedade para personalizar o mapa. Na segunda coluna onde fica a gramática e a propriedade do gráfico, selecione o ícone superior de propriedades e vá até ícone de mapa na segunda linha. Pode alterar a propriedade do Mapa, em cada ícone da segunda linha tem acesso a um tipo de personalização da visualização. 
+![Propriedades Visualização](images/Workbook5.png)
 
-    --Inserção de bulas de remédios
-    INSERT INTO documentation_tab values(1, to_blob(bfilename('DATA_PUMP_DIR', 'OK-Engov.pdf')));  
-    INSERT INTO documentation_tab values(1, to_blob(bfilename('DATA_PUMP_DIR', 'OK-TYLENOL.pdf')));
-    commit;
+5. Pode deixar no modo que achar mais agradável, para continuar vou deixar no modo Dark/Escuro do Mapa.
+![Propriedades Visualização](images/Workbook6.png)
 
-    --Criação de chunks e embedding
-    CREATE TABLE doc_chunks as
-    (select dt.id doc_id, et.embed_id, et.embed_data, to_vector(et.embed_vector) embed_vector
-    from
-    documentation_tab dt,
-    dbms_vector_chain.utl_to_embeddings(
-        dbms_vector_chain.utl_to_chunks(dbms_vector_chain.utl_to_text(dt.data), json('{"normalize":"all"}')),
-        json('{"provider":"database", "model":"doc_model"}')) t,
-    JSON_TABLE(t.column_value, '$[*]' COLUMNS (embed_id NUMBER PATH '$.embed_id', embed_data VARCHAR2(4000) PATH '$.embed_data', embed_vector CLOB PATH '$.embed_vector')) et
-    );
-    commit;
+6. Criar um gráfico de Barras. Seleciona o campos desejados na coluna da esquerda onde fica os dados, segurando o _CTRL+Clique_  **Estado e Quantidade**. Agora, arraste os itens selecionados para a Tela, ao lado do Mapa, aparece uma faixa verde na posição onde a visualização vai ficar. 
+![Gráfico de Barra](images/Barra1.png)
 
-    --Criação de Function para busca vetorial
-    CREATE OR REPLACE FUNCTION rag_function ( rag_input IN VARCHAR2 ) 
-    RETURN NUMBER 
-    IS  
-        query_vector CLOB;
-        text_variable VARCHAR2(4000) := rag_input;
-        l_doc_id VARCHAR2(100); 
-        CURSOR c1 IS 
-            SELECT * 
-            FROM doc_chunks 
-            ORDER BY VECTOR_DISTANCE(EMBED_VECTOR, query_vector, EUCLIDEAN_SQUARED) 
-            FETCH FIRST 3 ROWS ONLY WITH TARGET ACCURACY 97;  
-    BEGIN 
-        -- Select vector embedding
-        SELECT vector_embedding(doc_model USING text_variable AS data) 
-        INTO query_vector 
-        FROM dual;
+7. Para ordenar os dados do gráfico selecione o ícone com uma seta para cima e outra para baixo, como mostrado na imagem. E então selecione a forma que deseja ordenar os dados. 
+![Ordenar Dados](images/Ordenar1.png)
+![Ordenar Dados](images/Ordenar2.png)
+![Ordenar Dados](images/Ordenar3.png)
 
-        -- Loop through the result set
-        FOR row_1 IN c1 LOOP  
-            -- Output using DBMS_OUTPUT.PUT_LINE
-            DBMS_OUTPUT.PUT_LINE('Embed Data: ' || SUBSTR(row_1.embed_data, 1, 4000)); -- Use SUBSTR to limit output length if necessary
-        END LOOP;
+8. Salve seu trabalho até agora. Selecione o ícone do disquete no campo direito superior. Dê um nome para o seu Painel e salve. 
+![Salvar Painel](images/Save.png)
 
-        RETURN 1;
-    EXCEPTION
-        WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
-            RETURN 0;
-    END;
-    /
+## 3️⃣ Adição de Estatística nas Visualizações
 
-    </copy>
+1. Para adicionar estatísticas como: _Previsão, Linha de Tendência, Linha de Referência, Outliers ou Cluster_. 
+<br> Seleciona a visualização que deseja adiconar estatística. Clique com o _botão direito_, selecione **Adionar Estatísticas**. E escolhe a opção **Outliers**, trará os pontos que destoam do grupo. 
 
-## Task 5: Consulta de Informações na Bula
+   ![Estatística - Outliers](images/Outliers.png)
+   ![Estatística - Outliers](images/Outliers2.png)
 
-Copie, cole e execute os comandos abaixo:
+2. Para deixar uma visualização mais personalizada pode adicionar um filtro para trazer os _**10 maiores valores**_. 
+<br> Selecione o dado **Quantidade** na primeira coluna e traga para segunda coluna, na gramática do painel para adionar **Quantidade** em **Filtros**. 
+<br> Personalize o filtro, definindo _N Mais Altos_ e Contragem _10_. 
 
-*Transformando sua pergunta em vetor, de acordo com o modelo importado:*
+   ![Filtro na Visualização](images/Filtro.png)
+   ![Filtro na Visualização](images/Filtro1.png)
 
-    <copy>  
-    --Transformando sua pergunta em vetor, de acordo com o modelo importado
-    SELECT vector_embedding(doc_model USING '<SUA PERGUNTA>' AS data) FROM dual;
-    </copy>
-<!-- Separador -->
+3. Ao adicionar mais algumas métricas de estatística, como Linha de Referência. 
+<br> Seleciona a visualização que deseja adiconar estatística. Clique com o _botão direito_, selecione **Adionar Estatísticas**. E escolhe a opção **Linha de Referência**. Deixe na Função Média. 
 
-**Exemplo:**
+   ![Linha de Referência](images/Referencia1.png)
+   ![Linha de Referência](images/Referencia2.png)
 
-    <copy> 
-    SELECT vector_embedding(doc_model USING 'O QUE É O TYLENOL' AS data) FROM dual;
-    </copy>
+4. Repita o passo anterior. 
+<br> Seleciona a visualização que deseja adiconar estatística. Clique com o _botão direito_, selecione **Adionar Estatísticas**. E escolhe a opção **Linha de Referência**. Deixe na Função Mediana, alterando a cor da linha para ficar diferente.   
 
-*Consulta de informações entre as bulas de remédios*
-<!-- Separador -->
-    <copy> 
-    --Consulta de informações entre as bulas de remédios
-    DECLARE
-        v_input varchar2(4000) := '<SUA PERGUNTA>';
-        v_n number;
-    BEGIN 
-        v_n := rag_function ( v_input ); 
-        DBMS_OUTPUT.put_line('Function returned: ' || v_n);
-    END;
-    /
-    </copy>
+   ![Linha de Referência](images/Referencia3.png)
+   ![Linha de Referência](images/Referencia4.png)
 
-<!-- Separador -->
+<br>
+### **OPCIONAL**
 
-**Exemplo:**
+5. Criar uma visualização de Nuvem de Palavras e utilizá-la como filtro. 
+Selecione os campos desejados **Embarcao e Quantidade**. _Clique com o botão direito_ e escolhe a opção **Selecionar Visualização**, agora selecione o ícone da nuvem de palavras, como na imagem a seguir. 
+   ![Nuvem de Palavras](images/Tag1.png)
+   ![Nuvem de Palavras](images/Tag2.png)
 
-    <copy> 
-    DECLARE
-        v_input varchar2(4000) := 'O QUE É O TYLENOL';
-        v_n number;
-    BEGIN 
-        v_n := rag_function ( v_input ); 
-        DBMS_OUTPUT.put_line('Function returned: ' || v_n);
-    END;
-    /
-    </copy>
+6. Usar uma visualização como filtro. Ao lado do título da visualização existe um filtro, selecione para o **filtro ficar verde**, isso significa que a **visualização está sendo utilizada como filtro**
+   ![Nuvem de Palavras como Filtro](images/Tag3.png)
+
+7. Selecione algum item da Nuvem de Palavras, vai perceber que todas as visualizações vão ser filtradas a partir dela. Como exemplo foi selecionado **Outros**.
+   ![Nuvem de Palavras como Filtro](images/Tag4.png)
+
+8. Adicionar Título na primeira página do Painel. Na primeira Coluna selecione o segundo ícone do gráfico (Visualizações). Escolha **Caixa de Texto** segure e arrasta para a Tela no canto superior da tela. 
+   ![Título do Painel](images/Titulo.png)
+
+9. Personalize o Título mudando as propriedades, segunda coluna segundo ícone, adicione uma cor ao fundo, deixe o texto centralizado e outras personalizações como mostra na imagem a seguir.
+   ![Título do Painel](images/Titulo2.png)
+
+### **Variedade de Filtros**
+10. Adicionar uma Caixa de Filtro na Tela, selecione o campo **Ano** para utilizar como Filtro, arraste e solte até ficar ao lado do Título, canto direito superior.  
+   ![Filtro Seletor](images/Filtro10.png)
+
+11. Na gramática do Painel, selecione o tipo de visualização que quer **Filtros do Painel de Controle**. E selecione um Ano do Filtro.
+   ![Filtro Seletor](images/Filtro11.png)
+   ![Filtro Seletor](images/Filtro12.png)
+
+12. Personalize o nome do Filtro, selecione na segunda coluna no segundo ícone (Propriedades), Atualize o Label para **Personalizado**, e deixe como **ANO**.
+   ![Filtro Seletor](images/Filtro13.png)   
+
+13. Também pode utilizar filtros no cabeçalho do Painel. Selecione o campo **ESTADO** na primeira coluna no primeiro ícone (Dado). Segure e arraste para o campo superior da tela onde há um '+' com Clique aqui ou arraste os dados para adicionar um filtro".
+   ![Filtro Seletor](images/Filtro15.png)   
+
+14. Faça o mesmo com o campo **EMBARCACAO**. 
+   ![Filtro Seletor](images/Filtro16.png)  
+
+15. Renomeie o nome da Tela 1 para **'Geral'** 
+   ![Tela 1 para Geral](images/Geral.png)  
+
+## 4️⃣ Adição de Previsão e Campo Calculado
+
+1. Adiocione mais uma tela. No canto inferior tem um símbolo de '+'. Clique nele para adicionar uma segunda Tela.
+   ![Tela 2](images/Tela2.png) 
+
+2. Segure _CTRL+Clique_ nos campos **ANO e QUANTIDADE** na primeira coluna no primeiro ícone (Dados), selecione e arraste os dois para a tela em branco. Verifique que é um gráfico de **Linha**.
+   ![Previsão](images/Previsao.png) 
+
+3. Seleciona a visualização que deseja adiconar estatística. Clique com o _botão direito_, selecione **Adionar Estatísticas**. E escolhe a opção **Previsão**.
+   ![Previsão](images/Previsao2.png) 
+   ![Previsão](images/Previsao3.png) 
+
+4. (OPCIONAL) Personalizar a propriedade do gráfico, deixando o valor e o ponto no gráfico visível. 
+   ![Propriedades da Visualização](images/Prop1.png) 
+   ![Propriedades da Visualização](images/Prop2.png) 
+
+
+
+
+
+## 5️⃣ [EXTRA] Embeddings com OCI Generative AI
+
+### ❓**O que são Embeddings?**
+> Embeddings são representações vetoriais de objetos, como textos ou imagens. **Ao transformar objetos em vetores, conseguimos realizar operações matemáticas que permitem comparar, analisar e calcular a similaridade entre eles.** Isso possibilita, por exemplo, identificar semelhanças entre textos ou buscar informações relevantes de forma eficaz.
+
+### 🔍 **Por que Embeddings são importantes?**
+>   - **Análise de Similaridade:** Com embeddings, podemos calcular a proximidade entre diferentes objetos, facilitando a identificação de itens semelhantes.
+>    - **Eficiência Computacional:** Representar dados em vetores torna o processamento de informações mais rápido e eficiente.
+>    - **Versatilidade:** Embeddings podem ser usados em vários contextos, como busca de informações, recomendação de conteúdo, entre outros.
+
+Vamos acessar o Serviço de OCI Generative AI. A forma mais simples de fazer isto é pesquisando por
+**“Generative AI”** na aba de busca:
+
+   ![Search Generative AI](images/search-genai.png " ")
+
+Uma vez dentro do serviço, vamos selecionar **“Embedding”**, no menu do canto esquerdo, abaixo de **“Playground”**.
+
+   ![Acess Playground](images/genai-playground-acess.png " ")
+
+
 
 ## Agradecimentos
 
-- **Autores** - Caio Oliveira
-- **Autor Contribuinte** - Isabelle Anjos
-- **Última Atualização Por/Data** - Outubro 2024
+- **Autores** - Gabriela Miyazima
+- **Autor Contribuinte** - Caio Oliveira, Isabelle Anjos
+- **Última Atualização Por/Data** - Janeiro 2025
 
 ## Declaração de Porto Seguro (Safe Harbor)
 
