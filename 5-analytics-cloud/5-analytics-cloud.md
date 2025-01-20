@@ -59,12 +59,14 @@ O objetivo deste workshop é demonstrar de forma prática como utilizar a ferram
 
 2. Na tela em branco do painel, selecione os dados da primeira coluna da esquerda, segurando o _CTRL+Clique_  **Quantidade, Latitude, Longitude**. Agora, arraste os itens selecionados para a Tela, e como sugestão o OAC já sugere que a visualização seja um Mapa.
 ![Visualização Mapa](images/Workbook3.png)
+
+3. Dentro da Segunda Coluna, na gramática da visualização coloque o campo **QUANTIDADE** na caixa 'Tamanho'. E selecione o campo **ESTADO** e arraste ele ele dentro da caixa 'Cor'.
 ![Visualização Mapa](images/Workbook4.png)
 
-4. Pode alterar a propriedade para personalizar o mapa. Na segunda coluna onde fica a gramática e a propriedade do gráfico, selecione o ícone superior de propriedades e vá até ícone de mapa na segunda linha. Pode alterar a propriedade do Mapa, em cada ícone da segunda linha tem acesso a um tipo de personalização da visualização. 
+4. (OPCIONAL) Pode alterar a propriedade para personalizar o mapa. Na segunda coluna onde fica a gramática e a propriedade do gráfico, selecione o ícone superior de propriedades e vá até ícone de mapa na segunda linha. Pode alterar a propriedade do Mapa, em cada ícone da segunda linha tem acesso a um tipo de personalização da visualização. 
 ![Propriedades Visualização](images/Workbook5.png)
 
-5. Pode deixar no modo que achar mais agradável, para continuar vou deixar no modo Dark/Escuro do Mapa.
+5. (OPCIONAL) Pode deixar no modo que achar mais agradável, para continuar vou deixar no modo Dark/Escuro do Mapa.
 ![Propriedades Visualização](images/Workbook6.png)
 
 6. Criar um gráfico de Barras. Seleciona o campos desejados na coluna da esquerda onde fica os dados, segurando o _CTRL+Clique_  **Estado e Quantidade**. Agora, arraste os itens selecionados para a Tela, ao lado do Mapa, aparece uma faixa verde na posição onde a visualização vai ficar. 
@@ -105,8 +107,93 @@ O objetivo deste workshop é demonstrar de forma prática como utilizar a ferram
    ![Linha de Referência](images/Referencia3.png)
    ![Linha de Referência](images/Referencia4.png)
 
+## 4️⃣ One-Click Explain & Autoinsights
+1. Adiocione mais uma tela. No canto inferior tem um símbolo de '+', ao lado da aba 'Tela 1' ou 'Geral'. Clique nele para adicionar uma segunda Tela.
+   ![Tela 2](images/Tela2.png) 
+
+2. Renomeie o nome da Tela 2 para **'Autoinsights'**, Abas no canto inferior do Painel. 
+
+3. 
+
+
+
+
+## 5️⃣ [EXTRA] Adição de Previsão, Campo Calculado, Filtros e Personalização do Dashboard
+
+1. Adiocione mais uma tela. No canto inferior tem um símbolo de '+', ao lado da aba 'Tela 1' ou 'Geral'. Clique nele para adicionar uma segunda Tela.
+   ![Tela 4](images/Tela2.png) 
+
+
+### **Estatística - Previsão (Forecast)**
+2. Segure _CTRL+Clique_ nos campos **ANO e QUANTIDADE** na primeira coluna no primeiro ícone (Dados), e arraste os dois para a tela em branco. Verifique que é um gráfico de **Linha**.
+   ![Previsão](images/Previsao.png) 
+
+3. Seleciona a visualização que deseja adiconar estatística. Clique com o _botão direito_, selecione **Adionar Estatísticas**. E escolhe a opção **Previsão**.
+   ![Previsão](images/Previsao2.png) 
+   ![Previsão](images/Previsao3.png) 
+   ![Previsão](images/Previsao4.png) 
+
+4. (OPCIONAL) Personalizar a propriedade do gráfico, deixando o valor e o ponto no gráfico visível. 
+   ![Propriedades da Visualização](images/Prop1.png) 
+   ![Propriedades da Visualização](images/Prop2.png) 
+
+5. Outra forma de analisar a mudança períodica da quantidade de embarcações, é pelo gráfico de . Por isso, segure _CTRL+Clique_ nos campos **ANO e QUANTIDADE** na primeira coluna no primeiro ícone (Dados), e arraste os dois para a tela ao lado do gráfico de linha. 
+   ![Cascata](images/Cascata.png) 
+   ![Cascata](images/Cascata2.png) 
+
+
 <br>
-### **OPCIONAL**
+
+### **Campos Calculados**
+
+6. Vamos criar um campo Calculado para sempre trazer o valor de **QUANTIDADE** do ano anterior, ao ano que se refere o dado que está se utilizando agora. Clique com o _botão direito do mouse em cima do **'Meus Cálculos'**_. Selecione **Criar Cálculo ...**
+   ![Campo Calculado](images/Calc1.png)
+
+7. Escreva a função no corpo do Novo Cálculo.  
+
+   ```
+   AGO(QUANTIDADE, YEAR, 1)
+   ```
+8. Verifique se o cálculo está referenciado, ele está referenciado, quando as variáveis ficam coloridas, sendo a função verde (AGO), campo azul (QUANTIDADE).
+   ![Campo Calculado](images/Calc2.png)
+   ![Campo Calculado](images/Calc3.png)
+
+9. Adicione o nome do cálculo: **'Quantidade do Ano Anterior'**, clique no botão **Validar** para verificar que está tudo certo. E pode Salvar.
+   ![Campo Calculado](images/Calc4.png)
+
+10. Agora Crie um cálculo para ver a variação da Frota de Naval do Brasil, ano a ano.  Clique com o _botão direito do mouse em cima do **'Meus Cálculos'**_. Selecione **Criar Cálculo ...**
+   ![Campo Calculado](images/Calc1.png)
+
+11. Escreva a função no corpo do Novo Cálculo.  
+   ```
+   (QUANTIDADE - Quantidade do Ano Anterior)/Quantidade do Ano Anterior
+   ```
+
+12. Verifique se o cálculo está referenciado, ele está referenciado, quando as variáveis ficam coloridas, sendo a função verde, campo azul.
+   ![Campo Calculado](images/Calc6.png)
+   ![Campo Calculado](images/Calc7.png)
+
+13. Criar visualização com a variação em porcentagem do aumento ou diminuição da frota naval por Estado no decorrer dos Anos. Por isso, segure _CTRL+Clique_ nos campos **ANO (ANO)** e **Quantidade do Ano Anterior** (Meus Cálculos) na primeira coluna no primeiro ícone (Dados), e arraste os dois para a tela ao lado do gráfico de linha. 
+
+   ![Frota de Embarcação Ano a Ano](images/Calc10.png)
+
+14. Adicionei o campo **ESTADO** dentro da caixa Cor do gráfico, como indicado na imagem. 
+   ![Frota de Embarcação Ano a Ano](images/Calc11.png)
+
+15. Se tem o estado GO - Goiás, com uma variação bem grande comparada com os de mais, assim como RR - Roraima.  Portanto, será adicionado um filtro desconsiderando os 2 estados. Para isso, adicionei o campo **ESTADO** dentro da caixa Filtro do gráfico,
+   ![Frota de Embarcação Ano a Ano](images/Calc12.png)
+   ![Frota de Embarcação Ano a Ano](images/Calc14.png)
+   ![Frota de Embarcação Ano a Ano](images/Calc15.png)
+
+16. Clique com o _botão direito_, selecione **Adionar Estatísticas**. E escolhe a opção **Linha de Referência**. Deixe na Função Média. 
+   ![Frota de Embarcação Ano a Ano](images/Calc13.png)
+   ![Frota de Embarcação Ano a Ano](images/Calc16.png)
+
+
+
+<br>
+
+### **Filtros**
 
 5. Criar uma visualização de Nuvem de Palavras e utilizá-la como filtro. 
 Selecione os campos desejados **Embarcao e Quantidade**. _Clique com o botão direito_ e escolhe a opção **Selecionar Visualização**, agora selecione o ícone da nuvem de palavras, como na imagem a seguir. 
@@ -125,6 +212,8 @@ Selecione os campos desejados **Embarcao e Quantidade**. _Clique com o botão di
 9. Personalize o Título mudando as propriedades, segunda coluna segundo ícone, adicione uma cor ao fundo, deixe o texto centralizado e outras personalizações como mostra na imagem a seguir.
    ![Título do Painel](images/Titulo2.png)
 
+<br>
+
 ### **Variedade de Filtros**
 10. Adicionar uma Caixa de Filtro na Tela, selecione o campo **Ano** para utilizar como Filtro, arraste e solte até ficar ao lado do Título, canto direito superior.  
    ![Filtro Seletor](images/Filtro10.png)
@@ -139,51 +228,11 @@ Selecione os campos desejados **Embarcao e Quantidade**. _Clique com o botão di
 13. Também pode utilizar filtros no cabeçalho do Painel. Selecione o campo **ESTADO** na primeira coluna no primeiro ícone (Dado). Segure e arraste para o campo superior da tela onde há um '+' com Clique aqui ou arraste os dados para adicionar um filtro".
    ![Filtro Seletor](images/Filtro15.png)   
 
-14. Faça o mesmo com o campo **EMBARCACAO**. 
+14. Faça o mesmo com o campo **EMBARCACAO**, adicionando ele na barra de filtro superior do Painel. 
    ![Filtro Seletor](images/Filtro16.png)  
 
-15. Renomeie o nome da Tela 1 para **'Geral'** 
+15. Renomeie o nome da Tela 1 para **'Geral'**, Abas no canto inferior do Painel. 
    ![Tela 1 para Geral](images/Geral.png)  
-
-## 4️⃣ Adição de Previsão e Campo Calculado
-
-1. Adiocione mais uma tela. No canto inferior tem um símbolo de '+'. Clique nele para adicionar uma segunda Tela.
-   ![Tela 2](images/Tela2.png) 
-
-2. Segure _CTRL+Clique_ nos campos **ANO e QUANTIDADE** na primeira coluna no primeiro ícone (Dados), selecione e arraste os dois para a tela em branco. Verifique que é um gráfico de **Linha**.
-   ![Previsão](images/Previsao.png) 
-
-3. Seleciona a visualização que deseja adiconar estatística. Clique com o _botão direito_, selecione **Adionar Estatísticas**. E escolhe a opção **Previsão**.
-   ![Previsão](images/Previsao2.png) 
-   ![Previsão](images/Previsao3.png) 
-
-4. (OPCIONAL) Personalizar a propriedade do gráfico, deixando o valor e o ponto no gráfico visível. 
-   ![Propriedades da Visualização](images/Prop1.png) 
-   ![Propriedades da Visualização](images/Prop2.png) 
-
-
-
-
-
-## 5️⃣ [EXTRA] Embeddings com OCI Generative AI
-
-### ❓**O que são Embeddings?**
-> Embeddings são representações vetoriais de objetos, como textos ou imagens. **Ao transformar objetos em vetores, conseguimos realizar operações matemáticas que permitem comparar, analisar e calcular a similaridade entre eles.** Isso possibilita, por exemplo, identificar semelhanças entre textos ou buscar informações relevantes de forma eficaz.
-
-### 🔍 **Por que Embeddings são importantes?**
->   - **Análise de Similaridade:** Com embeddings, podemos calcular a proximidade entre diferentes objetos, facilitando a identificação de itens semelhantes.
->    - **Eficiência Computacional:** Representar dados em vetores torna o processamento de informações mais rápido e eficiente.
->    - **Versatilidade:** Embeddings podem ser usados em vários contextos, como busca de informações, recomendação de conteúdo, entre outros.
-
-Vamos acessar o Serviço de OCI Generative AI. A forma mais simples de fazer isto é pesquisando por
-**“Generative AI”** na aba de busca:
-
-   ![Search Generative AI](images/search-genai.png " ")
-
-Uma vez dentro do serviço, vamos selecionar **“Embedding”**, no menu do canto esquerdo, abaixo de **“Playground”**.
-
-   ![Acess Playground](images/genai-playground-acess.png " ")
-
 
 
 ## Agradecimentos
