@@ -114,8 +114,11 @@ O objetivo deste workshop é demonstrar de forma prática como utilizar a ferram
 2. Renomeie o nome da Tela 2 para **'Autoinsights'**, Abas no canto inferior do Painel. 
 
 3. 
-
-
+   ![Autoinsights](images/Autoinsight1.png) 
+   ![Autoinsights](images/Autoinsight2.png) 
+   ![Autoinsights](images/Autoinsight3.png) 
+   ![Autoinsights](images/Autoinsight4.png) 
+   ![Autoinsights](images/Autoinsight5.png) 
 
 
 ## 5️⃣ [EXTRA] Adição de Previsão, Campo Calculado, Filtros e Personalização do Dashboard
