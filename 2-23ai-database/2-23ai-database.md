@@ -121,13 +121,38 @@ Copie, cole e execute os comandos abaixo:
     EXECUTE dbms_vector.load_onnx_model('DATA_PUMP_DIR', 'intfloatmodelsmall.onnx', 'demo.doc_model', JSON('{"function" : "embedding", "embeddingOutput" : "embedding" , "input": {"input": ["DATA"]}}'));
     commit;
 
+    -- Criação de tabela para laboratório do Oracle Analytics Cloud
+    CREATE TABLE "EMBARCACOES"
+    (	"ID" NUMBER NOT NULL ENABLE,
+	"LOCAL" VARCHAR2(2000),
+	"SIGLA" VARCHAR2(500),
+	"ESTADO" VARCHAR2(500),
+	"EMBARCACAO" VARCHAR2(2000),
+	"QTDE" NUMBER,
+	"ANO" NUMBER,
+	"LATITUDE" NUMBER,
+	"LONGITUDE" NUMBER,
+	"DATA" DATE
+    );
+    BEGIN
+    DBMS_CLOUD.COPY_DATA(
+      table_name      => 'EMBARCACOES',
+      credential_name => 'OBJ_STORE_CRED',
+      file_uri_list   => 'https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/p3OXW-dA_vjZA2kRL1SDpO1S1sr2crQSnZ9rW-twTe0upEqO8zPW7lGBUBgH9-Jm/n/idi1o0a010nx/b/github_repo/o/embarcacoes.csv',
+      format          => json_object('type' value 'csv',
+                                     'skipheaders' value 1,
+                                     'dateformat' value 'DD-MM-YYYY',
+                                     'characterset' value 'we8iso8859p1')
+    );
+    END;
+    /
+
     </copy>
 
 Execute conforme indicado abaixo:
 
 ![Execute Code](images\execute-code.png)
 
-Após a execução do código, você está pronto para prosseguir para o próximo laboratório.
 
 
 ## 4️⃣ Criação do Oracle Analytics Cloud
@@ -150,6 +175,7 @@ Aguarde até a conclusão da criação:
 - Ícone verde = pronto para uso;
 ![Green OAC](images/CreateOAC3.png)
 
+Após a criação do OAC, você está pronto para prosseguir para o próximo laboratório.
 
 ## 👥 Agradecimentos
 
