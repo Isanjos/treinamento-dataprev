@@ -67,9 +67,8 @@ Escolha a versão 23ai para o banco de dados:
 
 ![Create 23AI](images/create-23ai.png)
 
-Coloque uma senha que consiga lembrar, escolha **secure access from everywhere** e clique em **Create Autonomous Database**:
+Coloque a senha **WORKSHOPsec2019##** , escolha **secure access from everywhere** e clique em **Create Autonomous Database**:
 <br><br>
-_VALIDAR -> Indicação de criação da senha WORKSHOPsec2019## deveria ser aqui. Mas está na segunda etapa do lab de APEX._
 
 ![Secure Acess](images/secure-acess.png)
 

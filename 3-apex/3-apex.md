@@ -26,7 +26,8 @@ O que você aprenderá:
 <br>
 ### **Recursos e Suporte**:
 
-- **Download da Aplicação**: [f102.sql](https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/idi1o0a010nx/b/demo_externaltable/o/f102.sql)
+- **Download da Aplicação**: [f102.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rYsZFM9_XUMb7t92b6jFH3B-5oB78j3URY3xlrK1LHXlVAjs_C1uD6xWoV-qtfpW/n/idi1o0a010nx/b/bucket-dataprev/o/f102.sql)
+
 - **Download do PDF**: [Normas Internas Dataprev](https://www.dataprev.gov.br/governanca/normativos/normasinternas). Para o nosso exemplo, utilizaremos o arquivo **Viagem a Serviço Nacional**.
 - **Documentação da Oracle Cloud**: [Getting started with vectors in 23ai](https://blogs.oracle.com/coretec/post/getting-started-with-vectors-in-23ai)
 - **Tutoriais**: [Oracle Database 23ai - Oracle AI Vector Search & Retrieval Augmented Generation (RAG) with Oracle APEX](https://www.linkedin.com/pulse/oracle-database-23ai-ai-vector-search-retrieval-augmented-rao-bqkcf/)
@@ -43,11 +44,8 @@ Inicialmente, retorne ao console da OCI. Em seguida, navegue até a página do s
 
    ![Tool Configuration](images/tool-config.png)
 
-Na página que será aberta ao acessar a URL da instância APEX, **insira a senha de acesso ao workspace admin**. Recomendamos utilizar a senha **WORKSHOPsec2019##** para este propósito.
+Na página que será aberta ao acessar a URL da instância APEX, **insira a senha de acesso ao workspace admin**, criada na etapa anterior (**WORKSHOPsec2019##**).
 <br>
-
-_VALIDAR -> Indicação de criação da senha WORKSHOPsec2019## deveria ser na etapa de criação do banco mas está aqui._
-
 
    ![Apex Password](images/apex-password.png)
 
@@ -79,7 +77,7 @@ Clique em **App Builder** e, em seguida, selecione **Import**.
 
    ![Import](images/import.png)
 
-Na página que será aberta, faça o upload do arquivo **f102.sql** utilizando o seguinte link: [f102.sql](https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/idi1o0a010nx/b/demo_externaltable/o/f102.sql).
+Na página que será aberta, faça o upload do arquivo **f102.sql** utilizando o seguinte link: [f102.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rYsZFM9_XUMb7t92b6jFH3B-5oB78j3URY3xlrK1LHXlVAjs_C1uD6xWoV-qtfpW/n/idi1o0a010nx/b/bucket-dataprev/o/f102.sql).
 
    ![Aplicação f102](images/f102.png)
 
@@ -156,8 +154,6 @@ Clique em **Upload** e preencha o formulário seguindo o exemplo fornecido. O **
 
 
     <copy>  
-
-        --JSON Utilizado no preenchimento
     {
         "by" : "words",
         "max" : "50",
