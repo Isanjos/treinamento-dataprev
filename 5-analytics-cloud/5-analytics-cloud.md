@@ -165,7 +165,7 @@ O objetivo deste workshop é demonstrar de forma prática como utilizar a ferram
 
 <br>
 
-Parabéns, você terminou os Laboratórios de **OAC - Oracle Analytics Cloud com sucesso!!** 
+🎉🎉 Parabéns, você terminou os Laboratórios de **OAC - Oracle Analytics Cloud com sucesso!!** 🎉🎉
 
 <br>
 
@@ -283,8 +283,11 @@ Selecione os campos desejados **Embarção e Quantidade**. _Clique com o botão 
 15. Renomeie o nome da Tela 1 para **'Geral'**, Abas no canto inferior do Painel. 
    ![Tela 1 para Geral](images/Geral.png)  
 
+<br>
 
+🎉🎉 Parabéns, você terminou os Laboratórios e Material EXTRA de **OAC - Oracle Analytics Cloud com sucesso!!** 🎉🎉
 
+<br>
 
 ## 👥 Agradecimentos
 
