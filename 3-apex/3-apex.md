@@ -134,7 +134,29 @@ Retorne à página do APEX e insira o **OCI Tenancy ID** no campo correspondente
 
 Por fim, clique em **Apply Changes** para salvar as configurações e concluir o ajuste da credencial.
 
-## 3️⃣ Teste da Aplicação
+## 3️⃣ Configuração no Payload da API de Requisição
+
+Para concluir este processo, será necessário realizar uma alteração no **payload da API de requisição**.
+
+Acesse o **App Builder** e clique na aplicação que você instalou recentemente.
+
+   ![APP Builder API](images/app-builder-api.png)
+
+Selecione em **Shared Components -> REST Data Resources**
+
+   ![Shared Components](images/shared-components.png)
+   ![Rest Data Resources](images/rest-data-resources.png)
+
+Clique em **cohere-chat** e, em seguida, no **ícone de lápis ao lado do método POST**.
+
+   ![Cohere Chat](images/cohere-chat.png)
+
+**Altere o Compartment ID para a variável OCI Tenancy ID coletada na etapa 2 deste laboratório.**
+Por fim, clique em **Apply Changes** para salvar as alterações.
+
+   ![alt text](images/ocid-compartment.png)
+
+## 4️⃣ Teste da Aplicação
 
 Com a configuração da credencial concluída, podemos testar a aplicação. Para isso, clique em **App Builder** e, em seguida, no ícone **Run** para executar a aplicação e verificar seu funcionamento.
 
